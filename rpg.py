@@ -1,5 +1,5 @@
-#Pre start#
-
+#Pre start
+import re
 import cmd
 import textwrap
 import sys
@@ -8,12 +8,12 @@ import os
 import random
 
 
-#Define things#
+#Define things
 
 screen_width = 100
 
 
-#Define PLayer#
+#Define PLayer
 
 class player:
     def __init__(self):
@@ -25,7 +25,7 @@ class player:
 
 player1 = player()
 
-#Title Screen setup#
+#Title Screen setup
 
 def pre_start():
    os.system('clear')
@@ -41,7 +41,7 @@ def pre_start():
 
    title_screen_select()
 
-#Title Screen interactivity#
+#Title Screen interactivity
 
 def title_screen_select():
     option = input("> ")
@@ -60,11 +60,12 @@ def title_screen_select():
         help_screen()
       elif option.lower() == ("quit"):
         sys.exit
+        exit
         
 
 
 
-#help Screen#
+#help Screen
 
    
 def help_screen():
@@ -80,7 +81,7 @@ def help_screen():
    print("################################")
    help_screen_select()
    
-#help interactivity#
+#help interactivity
 
 def help_screen_select():
     option = input("> ")
@@ -101,9 +102,10 @@ def help_screen_select():
       elif option.lower() == ("menu"):
           start()
 
-#control Screen#
+#control Screen
 
 def controls_help_screen():
+   os.system('clear')
    print("################################")
    print("#########  -CONTROLS-   ########")
    print("################################")
@@ -115,7 +117,7 @@ def controls_help_screen():
    print("################################")
    controls_screen_select()       
 
-#control Screen interactivity#
+#control Screen interactivity
 
 def controls_screen_select():
     option = input("> ")
@@ -141,9 +143,56 @@ def a1():
     start()
 
 
+
+
 def start():
   pre_start()
 
+  #map
+
+NAME = ""
+DESCRIPTION = 'description'
+ABOUT =  'about'
+SOLVED = 'solved'
+
+UP = 'up'
+DOWN = 'down'
+LEFT = 'left'
+RIGHT = 'right'
+
+places = {
+   'a1': False, 'a2': False, 'a3': False, 'a4': False, 
+   'b1': False, 'b2': False, 'b3': False, 'b4': False, 
+   'c1': False, 'c2': False, 'c3': False, 'c4': False, 
+   'd1': False, 'd2': False, 'd3': False, 'd4': False, 
+                  }
+
+index = None
+
+place_id = list(places)[zones[1]]
+print(palce_id) 
+
+zones = {
+  'a1': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'up',
+      DOWN:'down',
+      LEFT: 'left',
+      RIGHT:'right',
+   },
+
+
+}
+   #FILL THE OTHERS
+
+
+
+
+ 
     
         
 
