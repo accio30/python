@@ -76,7 +76,7 @@ def help_screen():
    print("################################")
    print("################################")
    print("#########  -CONTROLS- ##########")
-   print("############  -a1- #############")
+   print("############  -MAP- #############")
    print("##########   -MENU-   ##########")
    print("################################")
    help_screen_select()
@@ -87,7 +87,7 @@ def help_screen_select():
     option = input("> ")
     if option.lower() == ("controls"):
         controls_help_screen()
-    elif option.lower() == ("a1"):
+    elif option.lower() == ("map"):
         a1()
     elif option.lower() == ("menu"):
           start()
@@ -97,7 +97,7 @@ def help_screen_select():
       option = input("> ")
       if option.lower() == ("controls"):
         controls_help_screen()
-      elif option.lower() == ("a1"):
+      elif option.lower() == ("map"):
         a1()
       elif option.lower() == ("menu"):
           start()
@@ -133,7 +133,7 @@ def controls_screen_select():
       option = input("> ")
       if option.lower() == ("controls"):
         controls_help_screen()
-      elif option.lower() == ("a1"):
+      elif option.lower() == ("map"):
           a1()
       elif option.lower() == ("menu"):
           start()
@@ -167,44 +167,191 @@ places = {
    'd1': False, 'd2': False, 'd3': False, 'd4': False, 
                   }
 
-index = None
-
-place_id = list(places)[zones[1]]
-print(palce_id) 
 
 zones = {
   'a1': {
+      NAME: 'Home',
+      DESCRIPTION: 'Is Your House',
+      ABOUT:  'Your parents raised you here',
+      SOLVED: False,
+      
+      UP: 'The edge of the World',
+      DOWN:'b1',
+      LEFT: 'The edge of the World',
+      RIGHT:'a2',
+   },
+          
+  'a2': {
       NAME: '',
       DESCRIPTION: 'description',
       ABOUT:  'about',
       SOLVED: False,
       
-      UP: 'up',
-      DOWN:'down',
-      LEFT: 'left',
-      RIGHT:'right',
+      UP: 'The edge of the World',
+      DOWN:'b2',
+      LEFT: 'a1',
+      RIGHT:'a3',
+   },
+  'a3': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'The edge of the World',
+      DOWN:'b3',
+      LEFT: 'a2',
+      RIGHT:'a4',
+   },
+  'a4': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'The edge of the World',
+      DOWN:'b3',
+      LEFT: 'a2',
+      RIGHT:'The edge of the World',
+   },
+  'b1': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'a1',
+      DOWN:'c1',
+      LEFT: 'The edge of the World',
+      RIGHT:'b2',
+   },
+  'b2': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'a2',
+      DOWN:'c2',
+      LEFT: 'b1',
+      RIGHT:'b3',
+   },
+  'b3': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'a3',
+      DOWN:'c3',
+      LEFT: 'b2',
+      RIGHT:'b4',
+   },
+  'b4': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'a4',
+      DOWN:'c4',
+      LEFT: 'b3',
+      RIGHT:'The edge of the World',
+   },
+  'c1': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'b1',
+      DOWN:'d1',
+      LEFT: 'The edge of the World',
+      RIGHT:'c2',
    },
 
+  'c2': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'b2',
+      DOWN:'d2',
+      LEFT: 'c1',
+      RIGHT:'c3',
+   },        
+  'c3': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'b3',
+      DOWN:'d3',
+      LEFT: 'c2',
+      RIGHT:'c4',
+   },
+  'c4': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'b4',
+      DOWN:'d4',
+      LEFT: 'c3',
+      RIGHT:'The edge of the World',
+   },
+  'd1': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'c1',
+      DOWN:'The edge of the World',
+      LEFT: 'The edge of the World',
+      RIGHT:'d2',
+   },
 
+  'd2': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'c2',
+      DOWN:'The edge of the World',
+      LEFT: 'd1',
+      RIGHT:'d3',
+   },        
+  'd3': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'c3',
+      DOWN:'The edge of the World',
+      LEFT: 'd2',
+      RIGHT:'d4',
+   },
+  'd4': {
+      NAME: '',
+      DESCRIPTION: 'description',
+      ABOUT:  'about',
+      SOLVED: False,
+      
+      UP: 'c4',
+      DOWN:'The edge of the World',
+      LEFT: 'd3',
+      RIGHT:'The edge of the World',
+   }
 }
-   #FILL THE OTHERS
-
-
-
-
- 
-    
-        
-
-
+  
+  
+  
+  
 start()
         
-        
-    
-
-
-
-        
-    
-
-
