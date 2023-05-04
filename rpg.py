@@ -16,12 +16,12 @@ screen_width = 100
 #Define PLayer
 
 class player:
-    def __init__(self):
+    def __init__ (self):
         self.name = ''
         self.hp = 0
         self.xp = 0
         self.status = []
-        self.location = 'start'
+        self.location = 'a1'
 
 player1 = player()
 
@@ -88,17 +88,17 @@ def help_screen_select():
     if option.lower() == ("controls"):
         controls_help_screen()
     elif option.lower() == ("map"):
-        a1()
+        maping()
     elif option.lower() == ("menu"):
           start()
           
-    while option.lower() not in ["controls", "a1", "a2"]:
+    while option.lower() not in ["controls", "map", "a2"]:
       print("Enter a valid command")
       option = input("> ")
       if option.lower() == ("controls"):
         controls_help_screen()
       elif option.lower() == ("map"):
-        a1()
+        maping()
       elif option.lower() == ("menu"):
           start()
 
@@ -111,7 +111,7 @@ def controls_help_screen():
    print("################################")
    print("################################")
    print("################################")
-   print("##     -UNDER DEVELOPMENT-    ##")
+   print("##            -MAP-           ##")
    print("##     -UNDER DEVELOPMENT-    ##")
    print("##########   -MENU-   ##########")
    print("################################")
@@ -123,25 +123,20 @@ def controls_screen_select():
     option = input("> ")
     if option.lower() == ("controls"):
         controls_help_screen()
-    elif option.lower() == ("a1"):
-        a1()
+    elif option.lower() == ("map"):
+        maping()
     elif option.lower() == ("menu"):
           start()
           
-    while option.lower() not in ["controls", "a1", "a2"]:
+    while option.lower() not in ["controls", "map", "a2"]:
       print("Enter a valid command")
       option = input("> ")
       if option.lower() == ("controls"):
         controls_help_screen()
       elif option.lower() == ("map"):
-          a1()
+          maping()
       elif option.lower() == ("menu"):
           start()
-
-def a1():
-    print("Under Develpment")
-    start()
-
 
 
 
@@ -350,24 +345,27 @@ zones = {
    }
 }
 
-places_keys= list(zones.a1.keys())
+
 
   
-def map():
-    print("_____________________________________________")
-    print("|          |          |          |          |")
-    print("|          |          |          |          |")
-    print("|__________|__________|__________|__________|")
-    print("|          |          |          |          |")
-    print("|          |          |          |          |")
-    print("|__________|__________|__________|__________|")
-    print("|          |          |          |          |")
-    print("|          |          |          |          |")
-    print("|__________|__________|__________|__________|")
-    print("|          |          |          |          |")   
-    print("|          |          |          |          |")  
-    print("|__________|__________|__________|__________|")
+def maping():
+    print("___________________________________________________ ")
+    print("|",zones['a1'][NAME].center(10),"|""|""|""|")
+    print("|""|""|""|""|")
+    print("|__________|""__________|""__________|""___________|")
+    print("|""|""|""|""|")
+    print("|""|""|""|""|")
+    print("|__________|""__________|""__________|""___________|")
+    print("|""|""|""|""|")
+    print("|""|""|""|""|")
+    print("|__________|""__________|""__________|""___________|")
+    print("|""|""|""|""|")
+    print("|""|""|""|""|")
+    print("|__________|""__________|""__________|""___________|")
+    print('                        THE WORLD')
+    print('                     You are in ' + zones[player1.location][NAME].upper())
 
+maping()
 
 start()
         
