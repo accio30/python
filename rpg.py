@@ -345,28 +345,43 @@ zones = {
    }
 }
 
+zonenames = [zones['a1'][NAME], zones['a2'][NAME], zones['a3'][NAME], zones['a4'][NAME],
+zones['b1'][NAME], zones['b2'][NAME], zones['b3'][NAME], zones['b4'][NAME],
+zones['c1'][NAME], zones['c2'][NAME], zones['c3'][NAME], zones['c4'][NAME],
+zones['d1'][NAME], zones['d2'][NAME], zones['d3'][NAME], zones['d4'][NAME]]
+
+def mapdiscover():
+    while option.lower != ("exit"):
+        option = input("> ")
+        if option.lower() == ("exit"):
+            break
+        if option.lower() in zonenames:
+            print(zones[option][DESCRIPTION])
 
 
   
 def maping():
     print("___________________________________________________ ")
-    print("|",zones['a1'][NAME].center(10),"|""|""|""|")
-    print("|""|""|""|""|")
-    print("|__________|""__________|""__________|""___________|")
-    print("|""|""|""|""|")
-    print("|""|""|""|""|")
-    print("|__________|""__________|""__________|""___________|")
-    print("|""|""|""|""|")
-    print("|""|""|""|""|")
-    print("|__________|""__________|""__________|""___________|")
-    print("|""|""|""|""|")
-    print("|""|""|""|""|")
-    print("|__________|""__________|""__________|""___________|")
-    print('                        THE WORLD')
-    print('                     You are in ' + zones[player1.location][NAME].upper())
+    print("|",zones['a1'][NAME].center(8),"|",zones['a2'][NAME].center(8),"|",zones['a3'][NAME].center(8),"|",zones['a4'][NAME].center(8),"|")
+    print("|          |          |          |          |")
+    print("|__________|__________|__________|__________|")
+    print("|",zones['b1'][NAME].center(8),"|",zones['b2'][NAME].center(8),"|",zones['b3'][NAME].center(8),"|",zones['b4'][NAME].center(8),"|")
+    print("|          |          |          |          |")
+    print("|__________|__________|__________|__________|")
+    print("|",zones['c1'][NAME].center(8),"|",zones['c2'][NAME].center(8),"|",zones['c3'][NAME].center(8),"|",zones['c4'][NAME].center(8),"|")
+    print("|          |          |          |          |")
+    print("|__________|__________|__________|__________|")
+    print("|",zones['d1'][NAME].center(8),"|",zones['d2'][NAME].center(8),"|",zones['d3'][NAME].center(8),"|",zones['d4'][NAME].center(8),"|")
+    print("|          |          |          |          |")
+    print("|__________|__________|__________|__________|")
+    print('                 THE WORLD')
+    print('             You are in ' + zones[player1.location][NAME].upper())
+    print("To get info about a place, type the name, type exit to go to the menu")
+    mapdiscover()
+
 
 maping()
 
 start()
         
-        
+         
