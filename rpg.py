@@ -1,11 +1,7 @@
 #Pre start
-import re
-import cmd
-import textwrap
 import sys
-import time
 import os
-import random
+
 
 
 #Define things
@@ -22,6 +18,9 @@ class player:
         self.xp = 0
         self.status = []
         self.location = 'a1'
+        
+
+    
 
 player1 = player()
 
@@ -46,7 +45,7 @@ def pre_start():
 def title_screen_select():
     option = input("> ")
     if option.lower() == ("play"):
-        start()
+        poststar()
     elif option.lower() == ("options"):
         help_screen()
     elif option.lower() == ("quit"):
@@ -351,9 +350,19 @@ zones['c1'][NAME], zones['c2'][NAME], zones['c3'][NAME], zones['c4'][NAME],
 zones['d1'][NAME], zones['d2'][NAME], zones['d3'][NAME], zones['d4'][NAME]]
 
 def mapdiscover():
-    while option.lower != ("exit"):
+    while True:
         option = input("> ")
-        if option.lower() == ("exit"):
+        if option.lower() == ("retry"):
+            
+            break
+        if option.lower() in zonenames:
+            print(zones[option][DESCRIPTION])
+            
+def mapdiscovertutorial():
+    while True:
+        option = input("> ")
+        if option.lower() == ("retry"):
+            
             break
         if option.lower() in zonenames:
             print(zones[option][DESCRIPTION])
@@ -361,7 +370,8 @@ def mapdiscover():
 
   
 def maping():
-    print("___________________________________________________ ")
+    os.system('clear')
+    print(" ___________________________________________")
     print("|",zones['a1'][NAME].center(8),"|",zones['a2'][NAME].center(8),"|",zones['a3'][NAME].center(8),"|",zones['a4'][NAME].center(8),"|")
     print("|          |          |          |          |")
     print("|__________|__________|__________|__________|")
@@ -376,12 +386,57 @@ def maping():
     print("|__________|__________|__________|__________|")
     print('                 THE WORLD')
     print('             You are in ' + zones[player1.location][NAME].upper())
-    print("To get info about a place, type the name, type exit to go to the menu")
+    print("To get info about a place, type the name, type retry to exit")
+    
     mapdiscover()
+    
+def mapingtutorial():
+    os.system('clear')
+    print(" ___________________________________________")
+    print("|",zones['a1'][NAME].center(8),"|",zones['a2'][NAME].center(8),"|",zones['a3'][NAME].center(8),"|",zones['a4'][NAME].center(8),"|")
+    print("|          |          |          |          |")
+    print("|__________|__________|__________|__________|")
+    print("|",zones['b1'][NAME].center(8),"|",zones['b2'][NAME].center(8),"|",zones['b3'][NAME].center(8),"|",zones['b4'][NAME].center(8),"|")
+    print("|          |          |          |          |")
+    print("|__________|__________|__________|__________|")
+    print("|",zones['c1'][NAME].center(8),"|",zones['c2'][NAME].center(8),"|",zones['c3'][NAME].center(8),"|",zones['c4'][NAME].center(8),"|")
+    print("|          |          |          |          |")
+    print("|__________|__________|__________|__________|")
+    print("|",zones['d1'][NAME].center(8),"|",zones['d2'][NAME].center(8),"|",zones['d3'][NAME].center(8),"|",zones['d4'][NAME].center(8),"|")
+    print("|          |          |          |          |")
+    print("|__________|__________|__________|__________|")
+    print('                 THE WORLD')
+    print('             You are in ' + zones[player1.location][NAME].upper())
+    print("To get info about a place, type the name, type retry to exit")
+    
+    mapdiscovertutorial()
 
 
-maping()
+def poststar():
+    os.system('clear')
+    print("Welcome")
+    print("To this journey")
+    print("You are in your Home ")
+    homeimg= open ('home.txt','r')
+    print(''.join([line for line in homeimg]))
+    print("Type MAP to locate yourself")
+    option = input("> ")
+    if option.lower() == ("map"):
+        maping()
+        
+def postpoststart():
+    os.system('clear')
+    print("Great")
+    print("You will face many challenges in your adventure")
+    print("This is your first weapon")
+    swordimg= open ('sword.txt','r')
+    print(''.join([line for line in swordimg]))
+    print("How would you like to name it...")
+    global swordname
+    swordname = input("> ")
+    print("Great", swordname, "It will be")
+
 
 start()
-        
-         
+
+
