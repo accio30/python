@@ -1,6 +1,7 @@
 from graficos import Canvas
 from time import sleep
 from random import choice, randint
+import tkinter as tk
 ANCHO_canvas = 1400
 ALTURA_canvas = 800
 fps= 1/880
@@ -51,8 +52,14 @@ def crear_planeta(canvas, mouse_x, mouse_y, diametro, color):
         mouse_x + diametro, mouse_y + diametro,
         fill=color, tags="planeta", width=0
     )
+"""    canvas.crear_ovalo(mouse_x - diametro / 2, (mouse_y - diametro / 2)+diametro*0.6,
+        mouse_x + diametro, (mouse_y + diametro)-diametro*0.6)
+    canvas.crear_ovalo((mouse_x - diametro / 2)+diametro*0.6, (mouse_y - diametro / 2),
+        (mouse_x + diametro)-diametro*0.6, (mouse_y + diametro))
     canvas.establecer_color_contorno("planeta", color_planeta(canvas))
-
+"""
+    tk.Button(
+        bitmap=75)
 def cuerpo(canvas):
     for i in range(300):
         x1 = randint(0, ANCHO_canvas)
